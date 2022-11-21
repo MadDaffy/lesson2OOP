@@ -30,26 +30,20 @@ public class MainApp {
                 new Human(3, 10000)
         };
         Obstacle[] obstacles = {
-                new Track(500),
+                new Track(100),
                 new Barrier(2),
-                new Track(1000),
-                new Barrier(3),
+                new Track(100),
+                new Barrier(5),
                 new Track(1300),
                 new Barrier(4)
         };
 
         for (Unit unit : units) {
             for (Obstacle obstacle : obstacles) {
-                if (obstacle instanceof Barrier) {
-                    if (!(unit.jump((Barrier) obstacle))) {
-                        break;
-                    }
+                if(unit.isFail()) {
+                    break;
                 }
-                if (obstacle instanceof Track) {
-                    if (!unit.run((Track) obstacle)) {
-                        break;
-                    }
-                }
+               obstacle.makeAction(unit);
             }
         }
     }

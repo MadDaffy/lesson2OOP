@@ -5,6 +5,8 @@ import com.geekbrains.lesson2.obstacle.Obstacle;
 import com.geekbrains.lesson2.obstacle.Track;
 
 public interface Unit {
-    boolean jump(Barrier sizeOfBarrier);
-    boolean run(Track sizeOfTrack);
+    void jump(Barrier sizeOfBarrier);
+    void run(Track sizeOfTrack);
+
+    boolean isFail();
 }

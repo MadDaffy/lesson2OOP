@@ -1,8 +1,10 @@
 package com.geekbrains.lesson2.obstacle;
 
+import com.geekbrains.lesson2.unit.Unit;
+
 public abstract class Obstacle {
 
-    protected int sizeOfObstacle;
+    private final int sizeOfObstacle;
 
     public Obstacle(int sizeOfObstacle) {
         this.sizeOfObstacle = sizeOfObstacle;
@@ -11,4 +13,6 @@ public abstract class Obstacle {
     public int getSizeOfObstacle() {
         return sizeOfObstacle;
     }
+
+    public abstract void makeAction(Unit unit);
 }
